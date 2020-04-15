@@ -1,0 +1,10 @@
+#contenedor{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#card{
+    align-self: center;
+    width: 400px;
+}
