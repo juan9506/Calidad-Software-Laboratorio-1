@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +8,17 @@ import {Router} from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  email = ''
+  password = ''
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  Login(){
-    var email = (<HTMLInputElement>document.getElementById("email")).value
-    var password = (<HTMLInputElement>document.getElementById("password")).value
-
-    if(email == 'admin@gmail.com' && password == 'Admin123'){
-      this.router.navigate(['form'])
-    }else{
-      alert('Invalid Credentials')
-    }
+  
+  Login() {
+    this.authService.login(this.email, this.password);
   }
 
 }

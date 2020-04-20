@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path: 'form', component: FormComponent},
-  {path: 'login', component: LoginComponent}
+  {path: '', component: LoginComponent}
 ];
 
 @NgModule({
